@@ -5,7 +5,7 @@ class FetchTest extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          data: [1,2,3,4,5],
+          data: ["sample data"]
         };
       }
 
@@ -25,7 +25,14 @@ render() {
     return (
         <div>
             <h1>here is the data:</h1>
-           <p>  {data.map(data => <div>{data.text} {data.id} {data.date} </div> ) }</p>
+            <div>
+                {
+                data.map(data => 
+                    <div className="boxcontent1">
+                    <p> text: {data.text} </p> <p> id: {data.id} </p> <p>date: {data.date} </p>
+                    </div>)
+                }
+            </div>
         </div>
     )
     }
